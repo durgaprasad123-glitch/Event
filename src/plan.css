@@ -1,0 +1,123 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #004d99;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .filter-section label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .filter-section select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .filter-section select:focus {
+    border-color: #004d99;
+  }
+  
+  .dealer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .dealer-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .dealer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dealer-card img {
+    width: 100%;
+    border-radius: 12px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .dealer-card h3 {
+    margin: 15px 0;
+    font-size: 1.6rem;
+    color: #004d99;
+  }
+  
+  .dealer-card p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .dealer-card a {
+    color: #004d99;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .dealer-card a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .dealer-list {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+  
+  @media (max-width: 500px) 
+  {
+    .dealer-list {
+      grid-template-columns: 1fr;
+}
+}

@@ -1,0 +1,199 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa); /* Light background gradient */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    background-color: #ff5733; /* Vibrant Red */
+    border: 1px solid #c70039; /* Deep Pink */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: #c70039; /* Deep Pink */
+    color: #ffffff;
+}
+
+.form-content {
+    margin-top: 1.5rem;
+}
+
+.form-header {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ff5733; /* Vibrant Red */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem; /* Increased padding for text area */
+    border: 2px solid #ff5733; /* Vibrant Red */
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+    background-color: #fff5e6; /* Light Peach for text area background */
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='tel']:focus,
+input[type='password']:focus,
+select:focus,
+textarea:focus {
+    border-color: #ffbd33; /* Bright Yellow */
+    outline: none;
+}
+
+textarea {
+    height: 100px; /* Set height for text area */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+.details-section {
+    margin-top: 2rem;
+    border-top: 2px solid #ff5733; /* Vibrant Red */
+    padding-top: 1rem;
+}
+
+.details-section h2 {
+    margin-bottom: 1rem;
+    color: #ff5733; /* Vibrant Red */
+}
+
+.event-details,
+.catering-details,
+.function-hall-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ffbd33; /* Bright Yellow */
+    border-radius: 5px;
+    background-color: #fff3e6; /* Soft Peach */
+}
+
+.submit-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #ff5733; /* Vibrant Red */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #c70039; /* Deep Pink */
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sign-in-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.sign-in-button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #33c6ff; /* Bright Cyan */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+    background-color: #0099cc; /* Darker Cyan */
+}
+
+/* New styles for social media links */
+.form-group input[type='url'] {
+    background-color: #f0f0f0; /* Light gray for social media input fields */
+    border: 2px solid #007bff; /* Blue border for social media inputs */
+}
+
+.form-group input[type='url']:focus {
+    border-color: #0056b3; /* Darker blue when focused */
+}
+
+/* Social media sign-in button styles */
+.social-media-signin {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.social-button.google {
+    background-color: #db4437; /* Google Red */
+}
+
+.social-button.google:hover {
+    background-color: #c1351d; /* Darker Google Red */
+}
+
+.social-button.facebook {
+    background-color: #4267B2; /* Facebook Blue */
+}
+
+.social-button.facebook:hover {
+    background-color: #365e99; /* Darker Facebook Blue */
+}
+
+.social-button.linkedin {
+    background-color: #0077b5; /* LinkedIn Blue */
+}
+
+.social-button.linkedin:hover {
+    background-color: #005582; /* Darker LinkedIn Blue */
+}

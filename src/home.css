@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #f8f9fa;
+  }
+  .header {
+    background: #444;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  .search-location {
+    display: flex;
+    align-items: center;
+  }
+  .search-bar input {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  .hero {
+    background: url('https://t4.ftcdn.net/jpg/08/96/97/91/360_F_896979157_6OGX72vU4lrNMEkiZkFrdqFEzcPxJwp1.jpg') no-repeat center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .btn-primary {
+    background: #de7e5d;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .services {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  .btn-secondary {
+    background: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .testimonial {
+    background: #fce8e0;
+    padding: 60px 20px;
+  }
+  .testimonial-item {
+    background: #fbd5ab;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  footer {
+    background: #333;
+    color: white;
+    padding: 40px;
+    text-align:center;
+ }
