@@ -1,0 +1,135 @@
+/* Container and Layout */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGdvb2QlMjBwYWxlJTIwYmFja2dyb3VuZCUyMGltYWdlcyUyMGZvciUyMGxvZ2luJTIwcGFnZXxlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  animation: fadeBackground 2s ease;
+}
+
+@keyframes fadeBackground {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Login Form Styles */
+.login-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  height: 450px;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.6s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  color: #444;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  animation: titleFadeIn 0.5s ease-in-out;
+}
+
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #666;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border 0.3s ease;
+}
+
+.login-form input:focus {
+  border: 1px solid #ff6347;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 99, 71, 0.5);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-form button:hover {
+  background-color: #e55342;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
+}
+
+.login-form button:active {
+  background-color: #cc4738;
+  transform: translateY(0);
+}
+
+/* Small Text Styles */
+.login-form .small-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.login-form .small-text a {
+  color: #ff6347;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-form .small-text a:hover {
+  color: #e55342;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}

@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    background: linear-gradient(to right, #8b0000, #ff6347);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.about-company,
+.reviews,
+.review-form,
+.contacts {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.about-company p,
+.review-box p {
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+.gallery-title,
+.contact-title {
+    text-align: center;
+    color: #8b0000;
+    margin: 20px 0;
+}
+
+.planner-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.gallery-item img,
+.gallery-video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reviews h2,
+.review-form h2 {
+    color: #8b0000;
+}
+
+.review-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-box h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.ratings {
+    color: gold;
+}
+
+.contacts {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.review-form button {
+    background-color: #8b0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #ff6347;
+}

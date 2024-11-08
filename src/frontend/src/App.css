@@ -1,0 +1,223 @@
+/* General Styles */
+* {
+  box-sizing: border-box; /* Add box-sizing for better control */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  width: 100%; /* Make all elements take full width */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9; 
+}
+
+/* Container for layout structure */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #151313; /* Changed to solid black */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+nav a {
+  color: white;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #ff6347;
+}
+
+/* Search Styles */
+.search-location {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.location-icon {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color: #ff6347;
+  cursor: pointer;
+}
+
+/* Main Background Styles */
+.main-background {
+  background-image: url('https://plus.unsplash.com/premium_photo-1681398713955-a7f8d18a8527?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZvciUyMGV2ZW50JTIwbWFuYWdlbWVudCUyMHdlYnNpdGUlMjAlMjBpJTIwbmVlZCUyMGFib3V0JTIwdXMlMjBwYWdlJTIwYmFja2dyb3VuZCUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+h1.title {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+p.subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Tab Button Styles */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.tab-buttons button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 15px 50px; /* Padding remains the same */
+  margin: 80px; /* Unified margin */
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-buttons button.active,
+.tab-buttons button:hover {
+  background-color: #e55342;
+  transform: scale(1.05);
+}
+
+/* Event, Caterers, Function Hall Grid Styles */
+.event-grid, .caterer-grid, .function-hall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 per row */
+  gap: 20px;
+  padding: 20px; /* Optional: Add padding around the grid */
+}
+
+.event-card,
+.caterer-card,
+.function-hall-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(233, 229, 229, 0.999);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover,
+.caterer-card:hover,
+.function-hall-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgb(236, 233, 233);
+}
+
+.event-card img,
+.caterer-card img,
+.function-hall-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.event-card .content,
+.caterer-card .content,
+.function-hall-card .content {
+  padding: 20px;
+}
+
+.event-card .content h3,
+.caterer-card .content h3,
+.function-hall-card .content h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #ff6347; /* Title text color */
+}
+
+.event-card .content p,
+.caterer-card .content p,
+.function-hall-card .content p {
+  margin: 0 0 15px;
+}
+
+.event-card .content a,
+.caterer-card .content a,
+.function-hall-card .content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.event-card .content a:hover,
+.caterer-card .content a:hover,
+.function-hall-card .content a:hover {
+  background-color: #e55342;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Animations and Special Effects */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.event-card,
+.caterer-card,
+.function-hall-card {
+  animation: fadeIn 0.6s ease;
+}
+
+.auth-modal {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tab-buttons button {
+    margin: 8px; /* Slightly smaller margin for mobile */
+  }
+
+  .event-grid, .caterer-grid, .function-hall-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust grid for smaller screens */
+}
+}
