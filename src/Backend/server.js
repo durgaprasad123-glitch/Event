@@ -31,6 +31,11 @@ if (process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
     });
+} else {
+    // For development, API routes are available, but no frontend static files served.
+    app.get('/', (req, res) => {
+        res.send('API is running...');
+    });
 }
 
 const PORT = process.env.PORT || 5000;
