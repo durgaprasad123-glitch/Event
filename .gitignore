@@ -1,8 +1,0 @@
-# Ignore node_modules
-node_modules/
-
-# Ignore build outputs (for frontend)
-frontend/dist/
-
-# Ignore environment variables (don't share .env files)
-.env
