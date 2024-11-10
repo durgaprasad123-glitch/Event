@@ -4,7 +4,7 @@ import Home from './home';
 import About from './about';
 import Login from './Loginform';
 import Register from './register';
-import NotFound from './Notfound';
+import NotFound from './NotFound';
 
 const MainRouter = () => {
     return (
