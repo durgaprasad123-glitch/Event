@@ -1,4 +1,3 @@
-// LoginForm.js
 import React, { useState } from 'react';
 import './auth.css';
 
@@ -7,6 +6,7 @@ const LoginForm = () => {
     userEmail: '',
     userPassword: ''
   });
+  const [error, setError] = useState(null); // To capture any login errors
 
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
@@ -15,9 +15,14 @@ const LoginForm = () => {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+    setError(null); // Reset previous error
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      // Use the apiUrl from the environment variable
+      const apiUrl = import.meta.env.VITE_API_URL;
+
+      // Make the login request
+      const response = await fetch(`${apiUrl}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,11 +37,17 @@ const LoginForm = () => {
 
       const data = await response.json();
       console.log('Login Success:', data.message);
-      alert('Login Successful!'); // Show success message
-      // Optionally redirect the user or update the UI to show logged-in state
+
+      // Store the JWT token in localStorage
+      localStorage.setItem('authToken', data.token);
+
+      alert('Login Successful!');
+      // Optionally redirect the user after successful login
+      // window.location.href = '/dashboard'; // or use react-router to navigate
     } catch (error) {
       console.error('Error during login:', error.message);
-      alert('Login failed: ' + error.message); // Show error message
+      setError(error.message); // Set error message to show it in the UI
+      alert('Login failed: ' + error.message);
     }
   };
 
@@ -68,6 +79,7 @@ const LoginForm = () => {
             placeholder="Enter your password"
           />
         </div>
+        {error && <div className="error-message">{error}</div>} {/* Display error */}
         <button type="submit">Login</button>
       </form>
     </div>
