@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './loginform.css';
+
 import './auth.css';
 
 const LoginForm = () => {
@@ -20,8 +21,9 @@ const LoginForm = () => {
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
-      console.log('API URL:', apiUrl); // Log the API URL
-      console.log('Login Data:', loginData); // Log the login data
+
+      // Log the URL to ensure it is set correctly
+      console.log('API URL:', apiUrl);
 
       if (!apiUrl) {
         throw new Error('API URL is not set. Please check your .env file');
@@ -35,22 +37,18 @@ const LoginForm = () => {
         body: JSON.stringify(loginData),
       });
 
-      console.log('Response Status:', response.status); // Log the response status
-
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('Error response:', errorData); // Log the error response
         throw new Error(errorData.message || 'Login failed');
       }
 
       const data = await response.json();
-      console.log('Login Success:', data.message); // Log success message
-      console.log('Token:', data.token); // Log the token
+      console.log('Login Success:', data.message);
 
       localStorage.setItem('authToken', data.token);
       alert('Login Successful!');
     } catch (error) {
-      console.error('Error during login:', error.message); // Log the error
+      console.error('Error during login:', error.message);
       setError(error.message);
       alert('Login failed: ' + error.message);
     }
