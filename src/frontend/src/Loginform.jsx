@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './loginform.css';
 import './auth.css';
 
 const LoginForm = () => {
@@ -6,7 +7,7 @@ const LoginForm = () => {
     userEmail: '',
     userPassword: ''
   });
-  const [error, setError] = useState(null); // To capture any login errors
+  const [error, setError] = useState(null);
 
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
@@ -15,13 +16,17 @@ const LoginForm = () => {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    setError(null); // Reset previous error
+    setError(null);
 
     try {
-      // Use the apiUrl from the environment variable
       const apiUrl = import.meta.env.VITE_API_URL;
+      console.log('API URL:', apiUrl); // Log the API URL
+      console.log('Login Data:', loginData); // Log the login data
 
-      // Make the login request
+      if (!apiUrl) {
+        throw new Error('API URL is not set. Please check your .env file');
+      }
+
       const response = await fetch(`${apiUrl}/auth/login`, {
         method: 'POST',
         headers: {
@@ -30,23 +35,23 @@ const LoginForm = () => {
         body: JSON.stringify(loginData),
       });
 
+      console.log('Response Status:', response.status); // Log the response status
+
       if (!response.ok) {
         const errorData = await response.json();
+        console.error('Error response:', errorData); // Log the error response
         throw new Error(errorData.message || 'Login failed');
       }
 
       const data = await response.json();
-      console.log('Login Success:', data.message);
+      console.log('Login Success:', data.message); // Log success message
+      console.log('Token:', data.token); // Log the token
 
-      // Store the JWT token in localStorage
       localStorage.setItem('authToken', data.token);
-
       alert('Login Successful!');
-      // Optionally redirect the user after successful login
-      // window.location.href = '/dashboard'; // or use react-router to navigate
     } catch (error) {
-      console.error('Error during login:', error.message);
-      setError(error.message); // Set error message to show it in the UI
+      console.error('Error during login:', error.message); // Log the error
+      setError(error.message);
       alert('Login failed: ' + error.message);
     }
   };
@@ -79,7 +84,7 @@ const LoginForm = () => {
             placeholder="Enter your password"
           />
         </div>
-        {error && <div className="error-message">{error}</div>} {/* Display error */}
+        {error && <div className="error-message">{error}</div>}
         <button type="submit">Login</button>
       </form>
     </div>
