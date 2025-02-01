@@ -14,9 +14,15 @@ connectDB();
 
 const app = express();
 
+// Enable CORS for your frontend domain (both local development and production)
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://event-frontend-txx3.onrender.com'], // Allow both local and deployed frontend
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(express.json()); // Parse incoming requests with JSON payloads
 
 // API Routes
 app.use('/api/auth', authRoutes);
@@ -32,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
     });
 } else {
-    // For development, API routes are available, but no frontend static files served.
+    // For development
     app.get('/', (req, res) => {
         res.send('API is running...');
     });
